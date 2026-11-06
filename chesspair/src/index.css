@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme {
+  --color-golden-batter: #E8D1A7;
+  --color-olive-harvest: #9D9167;
+  --color-toasted-caramel: #84592B;
+  --color-spiced-wine: #743014;
+  --color-cowhide-cocoa: #442D1C;
+}
+
+@layer base {
+  :root {
+    --cm-cocoa: #442D1C;
+    --cm-caramel: #84592B;
+    --cm-wine: #743014;
+    --cm-olive: #9D9167;
+    --cm-golden: #E8D1A7;
+    --cm-navy: #442D1C;
+    --cm-navy-dark: #362315;
+    --cm-navy-hover: #583a24;
+    --cm-yellow: #E8D1A7;
+    --cm-bg: #FAF7F2;
+    --cm-red: #743014;
+  }
+
+  body {
+    @apply bg-[#FAF7F2] text-[#3b281b] antialiased font-sans min-h-screen selection:bg-[#84592B] selection:text-white;
+    background-color: #FAF7F2;
+    color: #3b281b;
+  }
+
+  /* Custom scrollbars */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #F3EDE2;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #D8CCA8;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #B7A882;
+  }
+}
+
+/* Print styles for pairing & standings sheets */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .print-break-inside-avoid {
+    break-inside: avoid;
+  }
+}
